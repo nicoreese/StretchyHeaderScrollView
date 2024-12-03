@@ -1,9 +1,10 @@
 //
-//  StretchyHeaderScrollView.swift
+//  StretchyHeaderScrollView 2.swift
 //  StretchyHeaderScrollView
 //
 //  Created by Nico Reese on 03.12.24.
 //
+
 
 import SwiftUI
 
@@ -20,7 +21,7 @@ public struct StretchyHeaderScrollView<Content: View, Header: View, HeaderBackgr
     /// The header content layered above `headerBackground`.
     @ViewBuilder
     var headerContent: () -> Header
-    
+
     @State private var topOffset: CGFloat = 0
     @State private var safeAreaInsets: EdgeInsets = .init()
     
