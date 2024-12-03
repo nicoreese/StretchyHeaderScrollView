@@ -24,6 +24,16 @@ public struct StretchyHeaderScrollView<Content: View, Header: View, HeaderBackgr
     @State private var topOffset: CGFloat = 0
     @State private var safeAreaInsets: EdgeInsets = .init()
     
+    public init(
+        @ViewBuilder content: @escaping () -> Content,
+        @ViewBuilder headerBackground: @escaping () -> HeaderBackground,
+        @ViewBuilder headerContent: @escaping () -> Header
+    ) {
+        self.content = content
+        self.headerBackground = headerBackground
+        self.headerContent = headerContent
+    }
+    
     public var body: some View {
         ScrollView {
             HeaderContainer(topOffset: -topOffset, safeAreaTop: safeAreaInsets.top) {
