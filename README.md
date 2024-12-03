@@ -10,6 +10,9 @@ Want to implement a scroll view with a stretchy header in SwiftUI? But you don't
 * Super stretchy, super smooth
 * Requires iOS 18, due to use of onScrollGeometryChange to get the scroll offset
 
+# Use with Swift Package Manager
+https://github.com/nicoreese/StretchyHeaderScrollView.git
+
 ```swift
 StretchyHeaderScrollView {
     // Other content elements that should be displayed below the header, like the Hello text in the preview above.
