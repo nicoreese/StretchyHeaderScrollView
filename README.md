@@ -2,6 +2,13 @@
 
 ![me](https://github.com/nicoreese/StretchyHeaderScrollView/blob/main/Intro.gif)
 
+Want to implement a scroll view with a stretchy header in SwiftUI? But you don't want to use GeometryReader? And you don't want to have a fixed height for the header? Look no further.
+
+* No use of GeometryReader
+* Super easy to adopt
+* Header uses it's natural height, no hardcoded values needed
+* Super stretchy, super smooth
+
 ```swift
 StretchyHeaderScrollView {
     // Other content elements that should be displayed below the header, like the Hello text in the preview above.
