@@ -60,8 +60,9 @@ fileprivate struct HeaderContainer<Content: View, HeaderBackground: View>: View 
     var headerBackground: () -> HeaderBackground
     
     var body: some View {
-        LazyVStack {
+        VStack(spacing: 0) {
             Spacer(minLength: topOffset + safeAreaTop)
+            
             content()
         }
         .background(
