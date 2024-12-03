@@ -13,6 +13,7 @@ Want to implement a scroll view with a stretchy header in SwiftUI? But you don't
 # Use with Swift Package Manager
 https://github.com/nicoreese/StretchyHeaderScrollView.git
 
+# How to use
 ```swift
 StretchyHeaderScrollView {
     // Other content elements that should be displayed below the header, like the Hello text in the preview above.
