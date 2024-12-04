@@ -11,38 +11,38 @@ public struct StretchyHeaderScrollView<Content: View, Header: View, HeaderBackgr
     
     /// The scroll view content following the header view.
     @ViewBuilder
-    public var content: () -> Content
+    public var content: Content
     
     /// The header background.
     @ViewBuilder
-    public var headerBackground: () -> HeaderBackground
+    public var headerBackground: HeaderBackground
     
     /// The header content layered above `headerBackground`.
     @ViewBuilder
-    public var headerContent: () -> Header
+    public var headerContent: Header
     
     @State private var topOffset: CGFloat = 0
     @State private var safeAreaInsets: EdgeInsets = .init()
     
     public init(
-        @ViewBuilder content: @escaping () -> Content,
-        @ViewBuilder headerBackground: @escaping () -> HeaderBackground,
-        @ViewBuilder headerContent: @escaping () -> Header
+        @ViewBuilder content: () -> Content,
+        @ViewBuilder headerBackground: () -> HeaderBackground,
+        @ViewBuilder headerContent: () -> Header
     ) {
-        self.content = content
-        self.headerBackground = headerBackground
-        self.headerContent = headerContent
+        self.content = content()
+        self.headerBackground = headerBackground()
+        self.headerContent = headerContent()
     }
     
     public var body: some View {
         ScrollView {
             HeaderContainer(topOffset: -topOffset, safeAreaTop: safeAreaInsets.top) {
-                headerContent()
+                headerContent
             } headerBackground: {
-                headerBackground()
+                headerBackground
             }
             
-            content()
+            content
                 .frame(maxWidth: .infinity)
                 .offset(y: topOffset)
         }
