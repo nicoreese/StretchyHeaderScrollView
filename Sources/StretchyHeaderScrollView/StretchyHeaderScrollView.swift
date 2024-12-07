@@ -46,7 +46,8 @@ public struct StretchyHeaderScrollView<Content: View, Header: View, HeaderBackgr
                 .frame(maxWidth: .infinity)
                 .offset(y: topOffset)
         }
-        .ignoresSafeArea()
+        .contentMargins(safeAreaInsets.top, for: .scrollIndicators)
+        .ignoresSafeArea(.container, edges: .top)
         .scrollOffset($topOffset)
         .getSafeAreaInsets($safeAreaInsets)
     }
